@@ -31,15 +31,9 @@ void draw() {
   for (int x = 0; x < img.width; x+=6) {
     for (int y = 0; y < img.height; y+=6) {
       color got = img.get(x, y);
-      fill(255);
+      fill(red(got));
       float size = map(brightness(got), 0, 255, 0, 6);
       ellipse(x, y, size, size);
     }
   }
-  
-  //int x = int(random(width));
-  //int y = int(random(height));
-  //color c = img.get(x, y);
-  //fill(c);
-  //ellipse(x,y,20,20);
 }
