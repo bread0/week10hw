@@ -15,18 +15,16 @@
 // use either conditional logic or a modulo operator to have which color 
 // is being used by background() change periodically. see the example gif.
 
-color whichR[] = new int[255];
-int c;
+color c[] = new color[10];
 
 void setup() {
-  for (int i = 0; i < whichR.length; i++) {
-    c = whichR[i];
+  for (int i = 0; i < c.length; i++) {
+    c[i] = color(random(255), random(255), random(255));
   }
 }
 
 void draw() {
-  background(c);
-  if (frameCount % 60 == 0) {
-    c += 60;
+  if(frameCount % 60 == 0){
+    background(c[floor(random(0,10))]);
   }
 }
